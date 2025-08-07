@@ -4,7 +4,7 @@ import { bufferToString } from '../util/BufferUtil'
 @Component
 export struct Banner {
   @State bannerList: Array<BannerClass> = [
-  // new BannerClass('p0',
+  // new BannerClass(0,
   //   $r('app.media.banner_pic0'),
   //   'https://developer.huawei.com/consumer/cn/training/course/video/C101718352529709527'),
   // new BannerClass('p1',
@@ -28,7 +28,7 @@ export struct Banner {
   build() {
     Swiper() {
       ForEach(this.bannerList, (item: BannerClass) => {
-        Image(item.imageSrc)
+        Image($r(item.imageSrc))
           .objectFit(ImageFit.Contain)
           .width('100%')
           .padding({ top: 11, left: 16, right: 16 })
